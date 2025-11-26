@@ -5,72 +5,47 @@
 * ["How" Part 1 - Data at Scale](how-part-1-data-at-scale.md)
 * [Why We Built Our Own Consumer App](why-we-built-our-own-consumer-app.md)
 
-## DeLong Protocol
+## DeLong
 
-* [DeLong Protocol](delong/README.md)
+* [Introduction](delong/README.md)
   * [Overview](delong/introduction/overview.md)
   * [Ecosystem](delong/introduction/ecosystem.md)
-
-## Protocol
-
-### IDO Mechanism
-
-* [IDO Overview](delong/protocol/ido/overview.md)
-* [Parameters & Constraints](delong/protocol/ido/parameters.md)
-* [Virtual AMM Construction](delong/protocol/ido/virtual-amm.md)
-* [Price Discovery](delong/protocol/ido/pricing.md)
-* [Launch Process](delong/protocol/ido/launch.md)
-
-### Governance & Treasury
-
-* [Governance Overview](delong/protocol/governance/overview.md)
-* [Treasury Architecture](delong/protocol/governance/treasury.md)
-* [Proposal Types](delong/protocol/governance/proposals.md)
-* [Voting Mechanics](delong/protocol/governance/voting.md)
-* [Delisting Process](delong/protocol/governance/delisting.md)
-
-### Liquidity Management
-
-* [Liquidity Overview](delong/protocol/liquidity/overview.md)
-* [Locking Mechanism](delong/protocol/liquidity/locking-mechanism.md)
-* [Fee Accumulation](delong/protocol/liquidity/fee-accumulation.md)
-* [Impermanent Loss](delong/protocol/liquidity/impermanent-loss.md)
-* [Verification Methods](delong/protocol/liquidity/verification.md)
-
-### Rental & Dividends
-
-* [Rental Overview](delong/protocol/rental/overview.md)
-* [Payment Mechanism](delong/protocol/rental/payment.md)
-* [Dividend Distribution](delong/protocol/rental/dividends.md)
-
-### Smart Contracts
-
-* [Contracts Overview](delong/protocol/contracts/overview.md)
-* [Factory Contract](delong/protocol/contracts/factory.md)
-* [IDO Contract](delong/protocol/contracts/ido-contract.md)
-* [Governance Contract](delong/protocol/contracts/governance-contract.md)
-* [DatasetToken Contract](delong/protocol/contracts/token-contract.md)
-* [RentalPool Contract](delong/protocol/contracts/rental-pool.md)
-
-### Lab
-
-* [DeLong Lab Overview](delong/lab/overview.md)
-
-### Guides
-
-* [Guides Overview](delong/guides/overview.md)
-* [Participating in IDOs](delong/guides/participating-in-idos.md)
-* [Launching Datasets](delong/guides/launching-datasets.md)
-* [Accessing Datasets](delong/guides/accessing-datasets.md)
-* [Governance Participation](delong/guides/governance-participation.md)
-* [Trading Tokens](delong/guides/trading-tokens.md)
-
-### Resources
-
-* [Resources Overview](delong/resources/overview.md)
-* [Glossary](delong/resources/glossary.md)
-* [FAQ](delong/resources/faq.md)
-* [Deployed Contracts](delong/resources/deployed-contracts.md)
-* [Whitepaper](delong/resources/whitepaper.md)
-* [Security](delong/resources/security.md)
-* [Roadmap](delong/resources/roadmap.md)
+* [Protocol](delong/protocol/overview.md)
+  * [IDO](delong/protocol/ido/overview.md)
+    * [Parameters & Constraints](delong/protocol/ido/parameters.md)
+    * [Virtual AMM Construction](delong/protocol/ido/virtual-amm.md)
+    * [Price Discovery](delong/protocol/ido/pricing.md)
+    * [Launch Process](delong/protocol/ido/launch.md)
+  * [Governance](delong/protocol/governance/overview.md)
+    * [Treasury Architecture](delong/protocol/governance/treasury.md)
+    * [Proposal Types](delong/protocol/governance/proposals.md)
+    * [Voting Mechanics](delong/protocol/governance/voting.md)
+    * [Delisting Process](delong/protocol/governance/delisting.md)
+  * [Liquidity](delong/protocol/liquidity/overview.md)
+    * [Locking Mechanism](delong/protocol/liquidity/locking-mechanism.md)
+    * [Fee Accumulation](delong/protocol/liquidity/fee-accumulation.md)
+    * [Impermanent Loss](delong/protocol/liquidity/impermanent-loss.md)
+    * [Verification Methods](delong/protocol/liquidity/verification.md)
+  * [Rental](delong/protocol/rental/overview.md)
+    * [Payment Mechanism](delong/protocol/rental/payment.md)
+    * [Dividend Distribution](delong/protocol/rental/dividends.md)
+  * [Contracts](delong/protocol/contracts/overview.md)
+    * [Factory Contract](delong/protocol/contracts/factory.md)
+    * [IDO Contract](delong/protocol/contracts/ido-contract.md)
+    * [Governance Contract](delong/protocol/contracts/governance-contract.md)
+    * [DatasetToken Contract](delong/protocol/contracts/token-contract.md)
+    * [RentalPool Contract](delong/protocol/contracts/rental-pool.md)
+* [Lab](delong/lab/overview.md)
+* [Guides](delong/guides/overview.md)
+  * [Participating in IDOs](delong/guides/participating-in-idos.md)
+  * [Launching Datasets](delong/guides/launching-datasets.md)
+  * [Accessing Datasets](delong/guides/accessing-datasets.md)
+  * [Governance Participation](delong/guides/governance-participation.md)
+  * [Trading Tokens](delong/guides/trading-tokens.md)
+* [Resources](delong/resources/overview.md)
+  * [Glossary](delong/resources/glossary.md)
+  * [FAQ](delong/resources/faq.md)
+  * [Deployed Contracts](delong/resources/deployed-contracts.md)
+  * [Whitepaper](delong/resources/whitepaper.md)
+  * [Security](delong/resources/security.md)
+  * [Roadmap](delong/resources/roadmap.md)
