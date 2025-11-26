@@ -5,7 +5,7 @@
 * ["How" Part 1 - Data at Scale](how-part-1-data-at-scale.md)
 * [Why We Built Our Own Consumer App](why-we-built-our-own-consumer-app.md)
 
-## DeLong
+## DeLong Protocol
 
 * [Introduction](delong/README.md)
   * [Overview](delong/introduction/overview.md)
@@ -49,3 +49,4 @@
   * [Whitepaper](delong/resources/whitepaper.md)
   * [Security](delong/resources/security.md)
   * [Roadmap](delong/resources/roadmap.md)
+  * [Community](delong/resources/community.md)
