@@ -4,7 +4,7 @@ Project teams configure two fundamental parameters when launching an IDO: the fu
 
 ## Funding Goal
 
-The funding goal ($R_{target}$) determines how much capital the project aims to raise. This target defines when the IDO completes and how raised funds split between liquidity pool creation and treasury deposit.
+The funding goal ($$R_{target}$$) determines how much capital the project aims to raise. This target defines when the IDO completes and how raised funds split between liquidity pool creation and treasury deposit.
 
 **Protocol constraints:**
 - Must be greater than zero (any positive USDC amount is valid)
@@ -16,7 +16,7 @@ Typical funding goals range from \$10,000 for small datasets to \$500,000+ for l
 
 ## Team Allocation
 
-The team allocation percentage ($\alpha$) determines what fraction of total token supply the project team receives. This allocation rewards teams for dataset creation and ongoing maintenance while aligning their interests with token holder success.
+The team allocation percentage ($$\alpha$$) determines what fraction of total token supply the project team receives. This allocation rewards teams for dataset creation and ongoing maintenance while aligning their interests with token holder success.
 
 **Protocol constraints:**
 - Minimum: 0.01% (1 basis point) to allow maximum flexibility
@@ -26,7 +26,7 @@ The mathematically valid range extends up to 50%, though typical projects use 15
 
 ## Initial Price
 
-All IDOs start at a standardized initial price of $P_0 = 0.01$ USDC per token. This uniform starting point provides several investor benefits:
+All IDOs start at a standardized initial price of $$P_0 = 0.01$$ USDC per token. This uniform starting point provides several investor benefits:
 
 **Comparability** – Investors can directly compare different dataset offerings without adjusting for arbitrary starting valuations. All projects begin from the same baseline.
 
@@ -43,7 +43,7 @@ S_{total} = \frac{R_{target}}{P_0} \cdot \sqrt{\frac{\alpha}{(1-\alpha)^3}}
 $$
 
 This formula ensures that:
-1. The public sale can raise exactly $R_{target}$ through the virtual AMM
+1. The public sale can raise exactly $$R_{target}$$ through the virtual AMM
 2. The LP receives adequate token allocation for meaningful liquidity depth
 3. The capital split between LP and treasury follows optimal ratios
 
@@ -60,13 +60,13 @@ S_{LP} = \alpha \cdot S_{total}
 $$
 
 Where:
-- $S_{sale}$ = Tokens sold to public investors during the IDO
-- $S_{LP}$ = Tokens reserved for Uniswap liquidity pool pairing
-- $S_{total}$ = $S_{sale}$ + $S_{LP}$
+- $$S_{sale}$$ = Tokens sold to public investors during the IDO
+- $$S_{LP}$$ = Tokens reserved for Uniswap liquidity pool pairing
+- $$S_{total}$$ = $$S_{sale}$$ + $$S_{LP}$$
 
 ### Example Calculation
 
-For a dataset with $R_{target} = 50,000$ USDC and $\alpha = 0.20$:
+For a dataset with $$R_{target} = 50,000$$ USDC and $$\alpha = 0.20$$:
 
 $$
 S_{total} = \frac{50,000}{0.01} \cdot \sqrt{\frac{0.20}{(0.80)^3}} = 5,000,000 \cdot \sqrt{\frac{0.20}{0.512}}
@@ -77,8 +77,8 @@ $$
 $$
 
 Supply allocation:
-- $S_{sale} = 0.80 \times 3,125,000 = 2,500,000$ tokens
-- $S_{LP} = 0.20 \times 3,125,000 = 625,000$ tokens
+- $$S_{sale} = 0.80 \times 3,125,000 = 2,500,000$$ tokens
+- $$S_{LP} = 0.20 \times 3,125,000 = 625,000$$ tokens
 
 ## Capital Distribution at Launch
 
@@ -98,15 +98,15 @@ $$
 
 ### Example Distribution
 
-Continuing the previous example with $\alpha = 0.20$:
+Continuing the previous example with $$\alpha = 0.20$$:
 
 $$
 \gamma_{LP} = \sqrt{\frac{0.20}{0.80}} = \sqrt{0.25} = 0.50
 $$
 
 Capital split:
-- $USDC_{LP} = 50,000 \times 0.50 = 25,000$ USDC to Uniswap LP
-- $USDC_{treasury} = 50,000 \times 0.50 = 25,000$ USDC to governance treasury
+- $$USDC_{LP} = 50,000 \times 0.50 = 25,000$$ USDC to Uniswap LP
+- $$USDC_{treasury} = 50,000 \times 0.50 = 25,000$$ USDC to governance treasury
 
 The LP pairs 25,000 USDC with 625,000 tokens, establishing a launch price of:
 
@@ -118,9 +118,9 @@ This represents a 4x appreciation from the initial \$0.01 price, rewarding early
 
 ## Alpha Impact on Outcomes
 
-The team allocation percentage significantly affects fundraising dynamics and investor outcomes. The following table shows how different $\alpha$ values impact capital distribution for a \$50,000 USDC raise:
+The team allocation percentage significantly affects fundraising dynamics and investor outcomes. The following table shows how different $$\alpha$$ values impact capital distribution for a \$50,000 USDC raise:
 
-| $\alpha$ | $\gamma_{LP}$ | LP USDC | Treasury USDC | LP Tokens | Launch Price |
+| $$\alpha$$ | $$\gamma_{LP}$$ | LP USDC | Treasury USDC | LP Tokens | Launch Price |
 |----------|---------------|---------|---------------|-----------|--------------|
 | 15% | 0.420 | 21,000 | 29,000 | 468,750 | \$0.0448 |
 | 20% | 0.500 | 25,000 | 25,000 | 625,000 | \$0.0400 |
@@ -143,9 +143,9 @@ The team allocation percentage significantly affects fundraising dynamics and in
 
 ## Price Appreciation During IDO
 
-The virtual AMM pricing causes continuous price appreciation from $P_0 = 0.01$ to $P_{launch}$. Early investors purchasing at the beginning receive tokens near the initial price, while later investors pay increasingly higher prices. The final launch price depends on the team allocation:
+The virtual AMM pricing causes continuous price appreciation from $$P_0 = 0.01$$ to $$P_{launch}$$. Early investors purchasing at the beginning receive tokens near the initial price, while later investors pay increasingly higher prices. The final launch price depends on the team allocation:
 
-| $\alpha$ | Launch Price | Price Multiplier |
+| $$\alpha$$ | Launch Price | Price Multiplier |
 |----------|--------------|------------------|
 | 15% | \$0.0448 | 4.48x |
 | 20% | \$0.0400 | 4.00x |
