@@ -2,16 +2,4 @@
 
 Decentralized infrastructure for longevity data securitization.
 
-## Documentation Structure
-
-**[Introduction](introduction/overview.md)** - Protocol overview, core concepts, and key properties
-
-**[Protocol](protocol/overview.md)** - Technical architecture (IDO, Governance, Liquidity, Rental)
-
-**[Smart Contracts](protocol/contracts/overview.md)** - Contract specifications and interfaces
-
-**[DeLong Lab](lab/overview.md)** - TEE environments, Python SDK, and foundation models
-
-**[Guides](guides/overview.md)** - Practical how-to guides for all activities
-
-**[Resources](resources/overview.md)** - Glossary, FAQ, security, deployments, roadmap
+This documentation will guide you through the DeLong Protocol, explaining how datasets become tradeable securities, how capital formation works through Initial Data Offerings, how token holders govern project operations, and how rental revenue flows to investors. We'll cover the technical architecture, smart contract design, and practical guides for participating in the ecosystem.
