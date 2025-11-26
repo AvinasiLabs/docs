@@ -12,7 +12,7 @@ $$
 
 where $$S_{sale}$$ = $$(1 - \alpha) \times S_{total}$$ represents the tokens allocated for public sale.
 
-The virtual AMM is constructed such that when all salable tokens are purchased, the accumulated USDC (after fees) closely approximates the funding goal $$R_{target}$$. Minor differences may occur due to rounding across multiple transactions, but the protocol uses the actual accumulated USDC balance rather than the theoretical target for capital distribution.
+The virtual AMM is constructed such that when all salable tokens are purchased, the accumulated USDC (after fees) closely approximates the Raise Target $$R_{target}$$. Minor differences may occur due to rounding across multiple transactions, but the protocol uses the actual accumulated USDC balance rather than the theoretical target for capital distribution.
 
 Launch execution is automatic and permissionless—the purchase transaction that sells the final tokens immediately triggers the launch process in the same transaction. The protocol enforces a 100-day fundraising period. Projects that fail to sell all tokens within this period can enter a failed state, enabling refunds to investors.
 
@@ -133,7 +133,7 @@ Anyone can verify launch executed correctly by querying on-chain state:
 
 ## Failed Launches
 
-Projects that fail to reach their funding goal within the 100-day period enter a failed state. After the deadline expires, anyone can trigger the refund process, which enables proportional capital recovery for all token holders.
+Projects that fail to reach their Raise Target within the 100-day period enter a failed state. After the deadline expires, anyone can trigger the refund process, which enables proportional capital recovery for all token holders.
 
 ### Refund Mechanism
 

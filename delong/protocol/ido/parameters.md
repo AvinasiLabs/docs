@@ -1,28 +1,54 @@
 # Parameters & Constraints
 
-Project teams configure two fundamental parameters when launching an IDO: the funding goal and team allocation percentage. The protocol enforces constraints on these parameters to ensure viable token economies and investor protection.
+Project teams configure two fundamental parameters when launching an IDO: the Raise Target and Initial Equity Ratio. The protocol enforces constraints on these parameters to ensure viable token economies and investor protection.
 
-## Funding Goal
+## Raise Target
 
-The funding goal ($$R_{target}$$) determines how much capital the project aims to raise. This target defines when the IDO completes and how raised funds split between liquidity pool creation and treasury deposit.
+The Raise Target ($$R_{target}$$) determines how much capital the project aims to raise. This target defines when the IDO completes and how raised funds split between liquidity pool creation and treasury deposit.
 
 **Protocol constraints:**
 - Must be greater than zero (any positive USDC amount is valid)
 - No maximum limit enforced by the protocol
 
-Teams have complete flexibility in setting funding goals based on actual project needs. Data collection costs, infrastructure expenses for hosting and access, ongoing maintenance requirements, and development buffers all factor into appropriate funding levels. The governance-controlled treasury means teams must justify all expenditures to token holders, encouraging realistic rather than inflated funding requests.
+Teams have complete flexibility in setting Raise Targets based on actual project needs. Data collection costs, infrastructure expenses for hosting and access, ongoing maintenance requirements, and development buffers all factor into appropriate funding levels. The governance-controlled treasury means teams must justify all expenditures to token holders, encouraging realistic rather than inflated requests.
 
-Typical funding goals range from \$10,000 for small datasets to \$500,000+ for large-scale data collection efforts, but the protocol imposes no hard boundaries.
+Typical Raise Targets range from \$10,000 for small datasets to \$500,000+ for large-scale data collection efforts, but the protocol imposes no hard boundaries.
 
-## Team Allocation
+## Initial Equity Ratio
 
-The team allocation percentage ($$\alpha$$) determines what fraction of total token supply the project team receives. This allocation rewards teams for dataset creation and ongoing maintenance while aligning their interests with token holder success.
+The Initial Equity Ratio ($$\alpha$$) determines what fraction of total token supply the project team receives in exchange for contributing the dataset as the underlying asset.
+
+**What Initial Equity represents:**
+
+This is not free token distribution. Just as investors contribute USDC to purchase tokens, project teams contribute the dataset itself to receive tokens:
+
+- **Investors contribute**: Capital (USDC) → Receive tokens with revenue rights + governance rights
+- **Project teams contribute**: Dataset (underlying asset) → Receive tokens with revenue rights + governance rights
+
+The $$\alpha$$ parameter reflects the relative valuation of the dataset asset versus external capital needs. Higher $$\alpha$$ (25-30%) means the dataset is valued as a larger portion of the total project value. Lower $$\alpha$$ (15-20%) means more external capital is needed relative to the dataset's current value.
+
+**Why tokens are permanently locked:**
+
+The Initial Equity tokens are permanently locked in the Uniswap liquidity pool alongside the Public Sale tokens. Project teams cannot sell or transfer these tokens. However, they retain:
+
+1. **Revenue rights** - Receive proportional rental dividends from dataset access fees
+2. **Governance rights** - Vote on treasury allocations and operational decisions
+
+This design prevents rug pulls while ensuring project teams must operate the dataset long-term to earn ongoing rental revenue. Teams cannot extract value by selling tokens—they can only profit by maintaining dataset quality and attracting researchers.
+
+**Why investors don't own the data:**
+
+Investors receive governance rights (control over treasury funds) and revenue rights (rental dividends), but never own the underlying dataset. Data ownership and operational control remain with the project team. This separation is critical:
+
+- Investors control *how capital is spent* through governance
+- Project teams control *how data is managed and maintained*
+- Neither party can unilaterally harm the other
 
 **Protocol constraints:**
 - Minimum: 0.01% (1 basis point) to allow maximum flexibility
 - Maximum: 50% (5000 basis points) to prevent majority control
 
-The mathematically valid range extends up to 50%, though typical projects use 15-30% allocations. Lower allocations (15-20%) suit early-stage datasets requiring significant community-funded development. Higher allocations (25-30%) compensate teams that have already completed substantial work before fundraising. Extreme values (0.01-15% or 30-50%) are permitted but uncommon.
+The maximum ensures governance remains effective: with 50% quorum requirements and simple majority voting, teams cannot unilaterally pass proposals if $$\alpha$$ ≤ 50%. This preserves meaningful investor governance.
 
 ## Initial Price
 
@@ -61,7 +87,7 @@ $$
 
 Where:
 - $$S_{sale}$$ = Tokens sold to public investors during the IDO
-- $$S_{LP}$$ = Tokens reserved for Uniswap liquidity pool pairing
+- $$S_{LP}$$ = Initial Equity tokens locked in Uniswap liquidity pool (project team's equity)
 - $$S_{total}$$ = $$S_{sale}$$ + $$S_{LP}$$
 
 ### Example Calculation
@@ -82,7 +108,7 @@ Supply allocation:
 
 ## Capital Distribution at Launch
 
-When fundraising completes, raised capital splits between creating the Uniswap LP and depositing treasury funds. The split ratio depends on the team allocation:
+When fundraising completes, raised capital splits between creating the Uniswap LP and depositing treasury funds. The split ratio depends on the Initial Equity Ratio:
 
 $$
 \gamma_{LP} = \sqrt{\frac{\alpha}{1-\alpha}}
@@ -116,9 +142,9 @@ $$
 
 This represents a 4x appreciation from the initial \$0.01 price, rewarding early IDO participants.
 
-## Alpha Impact on Outcomes
+## Initial Equity Ratio Impact on Outcomes
 
-The team allocation percentage significantly affects fundraising dynamics and investor outcomes. The following table shows how different $$\alpha$$ values impact capital distribution for a \$50,000 USDC raise:
+The Initial Equity Ratio significantly affects fundraising dynamics and investor outcomes. The following table shows how different $$\alpha$$ values impact capital distribution for a \$50,000 USDC raise:
 
 | $$\alpha$$ | $$\gamma_{LP}$$ | LP USDC | Treasury USDC | LP Tokens | Launch Price |
 |----------|---------------|---------|---------------|-----------|--------------|
@@ -143,7 +169,7 @@ The team allocation percentage significantly affects fundraising dynamics and in
 
 ## Price Appreciation During IDO
 
-The virtual AMM pricing causes continuous price appreciation from $$P_0 = 0.01$$ to $$P_{launch}$$. Early investors purchasing at the beginning receive tokens near the initial price, while later investors pay increasingly higher prices. The final launch price depends on the team allocation:
+The virtual AMM pricing causes continuous price appreciation from $$P_0 = 0.01$$ to $$P_{launch}$$. Early investors purchasing at the beginning receive tokens near the initial price, while later investors pay increasingly higher prices. The final launch price depends on the Initial Equity Ratio:
 
 | $$\alpha$$ | Launch Price | Price Multiplier |
 |----------|--------------|------------------|
@@ -152,7 +178,7 @@ The virtual AMM pricing causes continuous price appreciation from $$P_0 = 0.01$$
 | 25% | \$0.0370 | 3.70x |
 | 30% | \$0.0349 | 3.49x |
 
-Early investors receive more favorable pricing when team allocations are lower, since more tokens are distributed through the public sale phase, creating stronger price appreciation from initial to final pricing.
+Early investors receive more favorable pricing when Initial Equity Ratios are lower, since more tokens are distributed through the public sale phase, creating stronger price appreciation from initial to final pricing.
 
 ## Parameter Selection Guidance
 
@@ -166,4 +192,4 @@ Projects should select parameters based on their specific circumstances:
 
 **Mature projects with stable operations** – Higher alpha captures completed work value with less treasury dependence. Minimal ongoing costs allow smaller operational budgets.
 
-The protocol's constraint ranges ensure all parameter combinations produce functional token economies while protecting investor interests through minimum liquidity requirements and maximum team allocation limits.
+The protocol's constraint ranges ensure all parameter combinations produce functional token economies while protecting investor interests through minimum liquidity requirements and maximum Initial Equity Ratio limits.

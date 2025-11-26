@@ -5,7 +5,7 @@ The IDO contract implements Initial Data Offering with Virtual AMM pricing.
 ## Core State
 
 **Configuration parameters:**
-- `rTarget` - Funding goal in USDC (6 decimals)
+- `rTarget` - Raise Target in USDC (6 decimals)
 - `alpha` - Project ownership ratio in basis points (1-5000 = 0.01%-50%)
 - `projectAddress` - Project owner multisig wallet
 - `tokenAddress` - Dataset token contract

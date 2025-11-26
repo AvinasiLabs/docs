@@ -17,7 +17,7 @@ Projects call `deployIDO` to launch a new dataset:
 - `metadataURI` - IPFS CID pointing to dataset metadata JSON
 - `rentalPricePerHour` - Rental price in USDC (6 decimals)
 - `config` - IDOConfig struct containing:
-  - `rTarget` - Funding goal in USDC (6 decimals)
+  - `rTarget` - Raise Target in USDC (6 decimals)
   - `alpha` - Project ownership ratio in basis points (1-5000 = 0.01%-50%)
 
 **Returns:**
@@ -27,7 +27,7 @@ Projects call `deployIDO` to launch a new dataset:
 
 The Factory enforces protocol-wide constraints:
 
-**Funding goal**: Must be greater than zero. No minimum or maximum limits exist.
+**Raise Target**: Must be greater than zero. No minimum or maximum limits exist.
 
 **Alpha coefficient**: Must be between 1-5000 basis points (0.01%-50%). Determines team allocation relative to total supply.
 
