@@ -52,17 +52,17 @@ The function calculates virtual reserves using VirtualAMM library, determines sa
 
 ### Buying Tokens
 
-**swapUSDCForExactTokens(tokenAmountOut, maxUSDCIn, deadline)** - Buy exact token amount, spending at most maxUSDCIn.
+`swapUSDCForExactTokens(tokenAmountOut, maxUSDCIn, deadline)` - Buy exact token amount, spending at most maxUSDCIn.
 
-**swapExactUSDCForTokens(usdcAmountIn, minTokensOut, deadline)** - Spend exact USDC amount, receiving at least minTokensOut.
+`swapExactUSDCForTokens(usdcAmountIn, minTokensOut, deadline)` - Spend exact USDC amount, receiving at least minTokensOut.
 
 Both charge 0.3% fee, verify slippage protection, transfer USDC from buyer, mint tokens to buyer, and update virtual reserves. If purchase brings `soldTokens == salableTokens`, the contract automatically triggers launch.
 
 ### Selling Tokens
 
-**swapExactTokensForUSDC(tokenAmountIn, minUSDCOut, deadline)** - Sell exact token amount, receiving at least minUSDCOut.
+`swapExactTokensForUSDC(tokenAmountIn, minUSDCOut, deadline)` - Sell exact token amount, receiving at least minUSDCOut.
 
-**swapTokensForExactUSDC(usdcAmountOut, maxTokensIn, deadline)** - Get exact USDC amount, selling at most maxTokensIn.
+`swapTokensForExactUSDC(usdcAmountOut, maxTokensIn, deadline)` - Get exact USDC amount, selling at most maxTokensIn.
 
 Both charge 0.5% fee, verify slippage protection, burn tokens from seller, and transfer USDC refund. Selling is only available during fundraising—after launch, users trade on Uniswap secondary market.
 

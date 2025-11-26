@@ -24,7 +24,7 @@
     * [Delisting Process](delong/protocol/governance/delisting.md)
   * [Liquidity](delong/protocol/liquidity/overview.md)
     * [Locking Mechanism](delong/protocol/liquidity/locking-mechanism.md)
-    * [Verification Methods](delong/protocol/liquidity/verification.md)
+    * [Transfer Restrictions](delong/protocol/liquidity/transfer-restrictions.md)
   * [Rental](delong/protocol/rental/overview.md)
     * [Payment Mechanism](delong/protocol/rental/payment.md)
     * [Dividend Distribution](delong/protocol/rental/dividends.md)
