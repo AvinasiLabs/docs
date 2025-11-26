@@ -1,7 +1,6 @@
 # Virtual AMM Construction
 
 _Author: Dylan, Avinasi Labs_
-_Last updated: November 26, 2025_
 
 The protocol must enable price discovery starting from an initial price when no actual liquidity exists yet. The virtual AMM solves this cold start problem by initializing trading with mathematically constructed reserves that create the desired starting price.
 
