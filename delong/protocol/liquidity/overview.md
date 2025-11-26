@@ -1,3 +1,3 @@
 # Liquidity
 
-DeLong implements permanent liquidity locking where Uniswap V2 LP tokens are minted directly to the Governance contract with no transfer function except internal delisting logic, eliminating rug pull risks while enabling capital recovery for failed projects through accumulated 0.3% trading fees that increase LP value over time.
+This section explains how DeLong implements permanent liquidity locking while enabling capital recovery. You'll learn how the locking mechanism prevents rug pulls by minting LP tokens directly to governance, how Uniswap's 0.3% trading fees accumulate and increase LP value over time, how impermanent loss affects locked positions differently than standard LPs, and how anyone can verify custody and LP composition on-chain.

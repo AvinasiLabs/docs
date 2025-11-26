@@ -1,3 +1,3 @@
 # Rental
 
-The rental mechanism enables researchers to access datasets by paying hourly fees to the IDO contract, which automatically splits proceeds 95% to token holders via RentalPool dividends and 5% to protocol fees, with on-chain payment verification enabling off-chain TEE access and governance-controlled pricing adjustments.
+This section covers how rental revenue flows from researchers to token holders. You'll learn how the payment mechanism handles hourly access fees with on-chain verification, how the RentalPool automatically distributes 95% of rental revenue as dividends to token holders using the Accumulated Rewards algorithm with O(1) gas complexity, and how governance proposals enable pricing adjustments based on demand.

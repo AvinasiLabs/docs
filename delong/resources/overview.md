@@ -1,31 +1,3 @@
 # Resources
 
-Reference materials and additional information for the DeLong Protocol community.
-
-## [Glossary](glossary.md)
-
-Key terms and definitions for protocol concepts, contract mechanics, and technical terminology.
-
-## [FAQ](faq.md)
-
-Frequently asked questions about protocol mechanics, governance, dividends, and technical details.
-
-## [Deployed Contracts](deployed-contracts.md)
-
-Official contract addresses on Ethereum mainnet and Sepolia testnet, including Factory and implementation contracts.
-
-## [Whitepaper](whitepaper.md)
-
-Protocol overview, core innovations, technical architecture, and security model.
-
-## [Security](security.md)
-
-Audit status, security features, bug bounty program, and responsible disclosure procedures.
-
-## [Roadmap](roadmap.md)
-
-Protocol development phases, timeline, and upcoming milestones.
-
-## [Community](community.md)
-
-Join the DeLong Telegram group for discussions, updates, and support.
+This section provides reference materials and additional information for the DeLong Protocol community. You'll find a glossary of key terms and technical terminology, frequently asked questions about protocol mechanics, official deployed contract addresses on mainnet and testnet, the complete whitepaper covering innovations and architecture, security audit status and bug bounty information, the development roadmap with upcoming milestones, and community links for discussions and support.

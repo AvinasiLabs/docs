@@ -1,3 +1,3 @@
 # IDO
 
-The Initial Data Offering mechanism enables fair capital formation for dataset projects through continuous price discovery that rewards early participation, automatically launching when the funding goal is reached by creating a permanent Uniswap liquidity pool and depositing treasury funds under governance control.
+This section explains the Initial Data Offering mechanism. You'll learn how project teams configure funding parameters within protocol constraints, how the Virtual AMM construction enables continuous price discovery from $0.01 initial pricing, how token prices evolve fairly based on actual demand, and how the protocol automatically executes launch when fundraising completes.

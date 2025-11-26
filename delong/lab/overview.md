@@ -1,3 +1,3 @@
 # Lab
 
-DeLong Lab serves as the first application built on the protocol, offering researchers TEE-secured Jupyter environments for privacy-preserving dataset access, Python SDK for development tools and authentication, and longevity foundation models for aging biology and therapeutic discovery.
+This section covers DeLong Lab, the first application built on the protocol. You'll learn about the TEE-secured Jupyter environments that enable privacy-preserving dataset access without exposing raw data, the Python SDK for integrating protocol datasets into research workflows, and the longevity foundation models designed specifically for aging biology and therapeutic discovery research.

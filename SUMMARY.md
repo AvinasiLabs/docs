@@ -30,6 +30,7 @@
     * [Payment Mechanism](delong/protocol/rental/payment.md)
     * [Dividend Distribution](delong/protocol/rental/dividends.md)
   * [Contracts](delong/protocol/contracts/overview.md)
+    * [Architecture](delong/protocol/contracts/architecture.md)
     * [Factory Contract](delong/protocol/contracts/factory.md)
     * [IDO Contract](delong/protocol/contracts/ido-contract.md)
     * [Governance Contract](delong/protocol/contracts/governance-contract.md)
