@@ -8,7 +8,7 @@
 ## DeLong Protocol
 
 * [Introduction](delong/README.md)
-  * [Overview](delong/introduction/overview.md)
+  * [What is DeLong](delong/introduction/introduction.md)
   * [Ecosystem](delong/introduction/ecosystem.md)
 * [Protocol](delong/protocol/overview.md)
   * [IDO](delong/protocol/ido/overview.md)
