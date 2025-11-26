@@ -1,6 +1,7 @@
 # Virtual AMM Construction
 
-_Author: Dylan, Avinasi Labs · Last updated: November 26, 2025_
+_Author: Dylan, Avinasi Labs_
+_Last updated: November 26, 2025_
 
 The protocol must enable price discovery starting from an initial price when no actual liquidity exists yet. The virtual AMM solves this cold start problem by initializing trading with mathematically constructed reserves that create the desired starting price.
 
@@ -19,31 +20,31 @@ K = (x_{virtual} + x_{real}) \times (y_{virtual} + y_{real})
 $$
 
 At the beginning of fundraising:
-- $x_{real} = 0$ (no USDC collected yet)
-- $y_{real} = 0$ (no tokens distributed yet)
-- $(x_{virtual}, y_{virtual})$ are calculated to produce the desired starting price
+- $$x_{real} = 0$$ (no USDC collected yet)
+- $$y_{real} = 0$$ (no tokens distributed yet)
+- $$(x_{virtual}, y_{virtual})$$ are calculated to produce the desired starting price
 
-As investors purchase tokens, real USDC accumulates and real tokens are distributed. The pricing mechanism treats $(x_{virtual} + x_{real})$ and $(y_{virtual} + y_{real})$ as the effective reserves, enabling smooth price appreciation from the initial state through full capitalization.
+As investors purchase tokens, real USDC accumulates and real tokens are distributed. The pricing mechanism treats $$(x_{virtual} + x_{real})$$ and $$(y_{virtual} + y_{real})$$ as the effective reserves, enabling smooth price appreciation from the initial state through full capitalization.
 
 ## Starting Price Construction
 
-All IDOs begin at $P_0 = 0.01$ USDC per token. The virtual reserves must satisfy:
+All IDOs begin at $$P_0 = 0.01$$ USDC per token. The virtual reserves must satisfy:
 
 $$
 \frac{x_{virtual}}{y_{virtual}} = P_0 = 0.01
 $$
 
-This constraint alone is insufficient—we need a second requirement. The virtual reserves are constructed such that when exactly $R_{target}$ USDC is collected, exactly $S_{sale}$ tokens have been sold according to the constant product formula.
+This constraint alone is insufficient—we need a second requirement. The virtual reserves are constructed such that when exactly $$R_{target}$$ USDC is collected, exactly $$S_{sale}$$ tokens have been sold according to the constant product formula.
 
 ## Mathematical Constraints
 
 The virtual reserve construction must satisfy three requirements simultaneously:
 
-1. **Initial price**: $\frac{x_0}{y_0} = 0.01$
+1. **Initial price**: $$\frac{x_0}{y_0} = 0.01$$
 
-2. **Fundraising completion**: When $R_{target}$ USDC is added, $S_{sale}$ tokens are sold
+2. **Fundraising completion**: When $$R_{target}$$ USDC is added, $$S_{sale}$$ tokens are sold
 
-3. **Constant product preservation**: $K = x_0 \times y_0 = (x_0 + R_{target}) \times (y_0 - S_{sale})$
+3. **Constant product preservation**: $$K = x_0 \times y_0 = (x_0 + R_{target}) \times (y_0 - S_{sale})$$
 
 From constraint (3):
 $$
@@ -64,13 +65,13 @@ $$
 x_0 \cdot S_{sale} = R_{target}(y_0 - S_{sale})
 $$
 
-Combined with constraint (1), $x_0 = 0.01 \cdot y_0$:
+Combined with constraint (1), $$x_0 = 0.01 \cdot y_0$$:
 
 $$
 0.01 \cdot y_0 \cdot S_{sale} = R_{target}(y_0 - S_{sale})
 $$
 
-This equation, along with the supply formula $S_{total} = S_{sale} + S_{LP}$ and the geometric mean calculation, determines the unique values of $(x_0, y_0)$ that satisfy all constraints.
+This equation, along with the supply formula $$S_{total} = S_{sale} + S_{LP}$$ and the geometric mean calculation, determines the unique values of $$(x_0, y_0)$$ that satisfy all constraints.
 
 ## Reserve Transition
 
@@ -88,19 +89,19 @@ When fundraising completes and the protocol creates the actual Uniswap pool, it 
 
 ## Why This Construction Works
 
-The geometric mean formula for total supply ($S_{total}$) and the virtual reserve construction are mathematically linked to ensure consistency. The formula:
+The geometric mean formula for total supply ($$S_{total}$$) and the virtual reserve construction are mathematically linked to ensure consistency. The formula:
 
 $$
 S_{total} = \frac{R_{target}}{P_0} \cdot \sqrt{\frac{\alpha}{(1-\alpha)^3}}
 $$
 
 directly determines both:
-- How many tokens must be created ($S_{total}$)
-- What virtual reserves enable selling exactly $(1-\alpha) \cdot S_{total}$ tokens for $R_{target}$ USDC
+- How many tokens must be created ($$S_{total}$$)
+- What virtual reserves enable selling exactly $$(1-\alpha) \cdot S_{total}$$ tokens for $$R_{target}$$ USDC
 
 This linkage guarantees that:
 1. Fundraising completes when target capital is raised
-2. The LP receives exactly $\alpha \cdot S_{total}$ tokens for pairing
+2. The LP receives exactly $$\alpha \cdot S_{total}$$ tokens for pairing
 3. Capital splits correctly between LP and treasury
 4. Launch price matches the final virtual AMM price
 
@@ -114,11 +115,11 @@ The virtual AMM construction provides several protections and advantages:
 
 **Deterministic pricing** – All investors face prices calculated from the same mathematical foundation without preferential access or insider rates. The formulas treat all addresses identically.
 
-**Comparable valuations** – The standardized $P_0 = 0.01$ starting price enables direct comparison between different dataset offerings without adjusting for arbitrary team-chosen initial valuations.
+**Comparable valuations** – The standardized $$P_0 = 0.01$$ starting price enables direct comparison between different dataset offerings without adjusting for arbitrary team-chosen initial valuations.
 
 **No liquidity provider risk** – Unlike traditional AMM launches where early LPs face impermanent loss, the virtual AMM requires no initial LP deposits. Teams don't risk capital to bootstrap liquidity.
 
-**Guaranteed completion** – The mathematical linkage between virtual reserves, supply, and fundraising target ensures that reaching $R_{target}$ automatically triggers launch. No uncertainty about whether goals will be met given sufficient demand.
+**Guaranteed completion** – The mathematical linkage between virtual reserves, supply, and fundraising target ensures that reaching $$R_{target}$$ automatically triggers launch. No uncertainty about whether goals will be met given sufficient demand.
 
 ## Cold Start Solution
 
