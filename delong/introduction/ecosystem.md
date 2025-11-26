@@ -1,5 +1,7 @@
 # Ecosystem
 
+_Author: Dylan, Avinasi Labs_
+
 DeLong builds a complete ecosystem centered on an immutable on-chain protocol, extending from economic infrastructure through privacy-preserving data infrastructure to AI-native research platforms and the complete lifecycle of longevity research—from foundation models to scientific discoveries.
 
 The protocol serves as the economic settlement layer that the longevity data ecosystem fundamentally lacks. While AI companies build models and data platforms aggregate datasets, DeLong provides immutable infrastructure for transparent asset valuation, trustless capital settlement, verifiable governance execution, and accountable revenue distribution. Datasets, compute resources, and AI capabilities operate within this economic framework—the protocol doesn't store data or run models, it ensures every economic interaction is enforceable, auditable, and fair.

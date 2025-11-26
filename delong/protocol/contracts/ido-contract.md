@@ -1,5 +1,7 @@
 # IDO Contract
 
+_Author: Dylan, Avinasi Labs_
+
 The IDO contract implements Initial Data Offering with Virtual AMM pricing.
 
 ## Core State

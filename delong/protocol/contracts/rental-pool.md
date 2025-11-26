@@ -1,5 +1,7 @@
 # RentalPool Contract
 
+_Author: Dylan, Avinasi Labs_
+
 The RentalPool implements the Accumulated Rewards algorithm with automatic settlement through DatasetToken transfer hooks.
 
 ## State Variables

@@ -1,5 +1,7 @@
 # Community
 
+_Author: Dylan, Avinasi Labs_
+
 Join the DeLong community to stay updated, ask questions, and connect with other users.
 
 ## Telegram

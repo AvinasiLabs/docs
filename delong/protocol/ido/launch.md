@@ -1,5 +1,7 @@
 # Launch Process
 
+_Author: Dylan, Avinasi Labs_
+
 When all salable tokens are sold, the protocol automatically transitions the project from fundraising to operational status. This process creates the permanent Uniswap liquidity pool, deposits treasury funds under governance control, and enables token trading in a single atomic transaction.
 
 ## Launch Trigger

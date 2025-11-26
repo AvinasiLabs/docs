@@ -1,5 +1,7 @@
 # Glossary
 
+_Author: Dylan, Avinasi Labs_
+
 Key terms used in DeLong Protocol documentation.
 
 ## IDO (Initial Data Offering)

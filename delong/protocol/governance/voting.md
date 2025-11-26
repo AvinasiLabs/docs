@@ -1,5 +1,7 @@
 # Voting Mechanics
 
+_Author: Dylan, Avinasi Labs_
+
 Token holders vote on proposals during seven-day voting periods using snapshot-based voting power. The system prevents manipulation through historical balance lookups and one-vote-per-address enforcement.
 
 ## Snapshot Voting

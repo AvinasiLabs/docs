@@ -1,5 +1,7 @@
 # Rental Payments
 
+_Author: Dylan, Avinasi Labs_
+
 Researchers pay hourly fees to access datasets in TEE environments. Payments split 95% to token holder dividends and 5% to protocol fees.
 
 ## How Rental Works

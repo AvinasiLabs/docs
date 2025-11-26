@@ -1,5 +1,7 @@
 # Delisting Mechanism
 
+_Author: Dylan, Avinasi Labs_
+
 Failed or abandoned dataset projects can be formally shut down through delisting proposals, enabling proportional capital recovery for token holders. The process removes locked liquidity, combines recovered funds with treasury remainder, and distributes refunds based on token ownership.
 
 ## Delisting Rationale

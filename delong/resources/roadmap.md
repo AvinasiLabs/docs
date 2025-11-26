@@ -1,5 +1,7 @@
 # Roadmap
 
+_Author: Dylan, Avinasi Labs_
+
 DeLong Ecosystem development roadmap spanning from Q4 2025 to Q4 2026.
 
 ## Q4 2025 — FOUNDATION I

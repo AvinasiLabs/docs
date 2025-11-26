@@ -1,5 +1,7 @@
 # FAQ
 
+_Author: Dylan, Avinasi Labs_
+
 Frequently asked questions about DeLong Protocol.
 
 **What is DeLong Protocol?**

@@ -1,5 +1,7 @@
 # Factory Contract
 
+_Author: Dylan, Avinasi Labs_
+
 The Factory contract coordinates deployment of dataset contract suites using the EIP-1167 minimal proxy pattern, maintaining a counter of deployed datasets.
 
 ## Core Responsibilities

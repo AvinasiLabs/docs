@@ -1,5 +1,7 @@
 # Deployed Contracts
 
+_Author: Dylan, Avinasi Labs_
+
 Official DeLong Protocol contract addresses across supported networks.
 
 ## Ethereum Mainnet

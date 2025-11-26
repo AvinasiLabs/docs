@@ -1,5 +1,7 @@
 # LP Locking Mechanism
 
+_Author: Dylan, Avinasi Labs_
+
 Uniswap LP tokens created at launch are permanently locked in the Governance contract with no removal mechanism except democratic delisting. This guarantees secondary market liquidity throughout project lifecycle and prevents rug pulls.
 
 ## Why Permanent Locking

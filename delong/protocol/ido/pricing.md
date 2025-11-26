@@ -1,5 +1,7 @@
 # Price Discovery
 
+_Author: Dylan, Avinasi Labs_
+
 Token price rises continuously as investors participate in the IDO. Earlier participants receive more tokens per dollar than later ones, creating automatic rewards for early commitment without manual tiering or arbitrary price schedules.
 
 The protocol uses Uniswap-style constant product pricing integrated with virtual reserves (see [virtual-amm.md](virtual-amm.md) for technical construction). This document focuses on pricing from the investor perspective.

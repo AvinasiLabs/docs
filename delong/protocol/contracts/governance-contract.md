@@ -1,5 +1,7 @@
 # Governance Contract
 
+_Author: Dylan, Avinasi Labs_
+
 The Governance contract merges treasury custody, LP management, and voting into a single per-IDO instance.
 
 ## State Variables

@@ -1,5 +1,7 @@
 # Whitepaper
 
+_Author: Dylan, Avinasi Labs_
+
 **Status**: In development
 
 The DeLong Protocol whitepaper provides a comprehensive overview of the protocol architecture, economic model, security guarantees, and use cases.

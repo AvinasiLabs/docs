@@ -1,5 +1,7 @@
 # Treasury Custody
 
+_Author: Dylan, Avinasi Labs_
+
 The treasury holds USDC raised during the IDO for project operational expenses. Rather than existing as a separate contract, treasury functionality integrates directly into the Governance contract, creating mathematical guarantees about fund access that protect investor capital.
 
 ## Integrated Architecture

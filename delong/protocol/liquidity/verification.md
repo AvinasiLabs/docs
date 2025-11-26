@@ -1,5 +1,7 @@
 # LP Lock Verification
 
+_Author: Dylan, Avinasi Labs_
+
 The permanent lock property is cryptographically verifiable by anyone through on-chain queries and contract code review. No trust in project teams or third parties is required—investors can independently confirm LP custody and validate no removal backdoors exist.
 
 ## Verifying LP Custody

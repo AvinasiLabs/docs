@@ -1,5 +1,7 @@
 # DatasetToken Contract
 
+_Author: Dylan, Avinasi Labs_
+
 The DatasetToken implements ERC-20 with voting (ERC20Votes), freezing mechanism, and automatic dividend settlement through RentalPool integration.
 
 ## State Variables

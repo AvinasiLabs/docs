@@ -1,5 +1,7 @@
 # Dividend Distribution
 
+_Author: Dylan, Avinasi Labs_
+
 The Accumulated Rewards algorithm enables automatic dividend distribution to all token holders with O(1) gas complexity, regardless of holder count. Revenue from dataset rentals flows to token holders proportionally without manual claims or batch processing.
 
 ## The Distribution Problem

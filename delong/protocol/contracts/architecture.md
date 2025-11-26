@@ -1,5 +1,7 @@
 # Smart Contract Architecture
 
+_Author: Dylan, Avinasi Labs_
+
 > Source code: [AvinasiLabs/delong-v1](https://github.com/AvinasiLabs/delong-v1)
 
 DeLong implements five core contracts per dataset: Factory, IDO, DatasetToken, Governance, and RentalPool. The Factory deploys minimal proxies for gas efficiency, while each dataset operates independently with its own contract suite.

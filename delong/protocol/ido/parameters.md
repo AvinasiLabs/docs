@@ -1,5 +1,7 @@
 # Parameters & Constraints
 
+_Author: Dylan, Avinasi Labs_
+
 Project teams configure two fundamental parameters when launching an IDO: the Raise Target and Initial Equity Ratio. The protocol enforces constraints on these parameters to ensure viable token economies and investor protection.
 
 ## Raise Target

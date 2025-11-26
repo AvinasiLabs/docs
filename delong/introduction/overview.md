@@ -1,5 +1,7 @@
 # Delong Protocol
 
+_Author: Dylan, Avinasi Labs_
+
 DeLong is a decentralized longevity data securitization protocol, enabling datasets to be tokenized as income-generating securities backed by rental revenue.
 
 ## What DeLong Does

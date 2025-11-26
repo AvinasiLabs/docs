@@ -1,5 +1,7 @@
 # Security
 
+_Author: Dylan, Avinasi Labs_
+
 Security practices, audit reports, and vulnerability disclosure for DeLong Protocol.
 
 ## Audit Status

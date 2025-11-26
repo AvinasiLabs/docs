@@ -1,5 +1,7 @@
 # Proposal Types
 
+_Author: Dylan, Avinasi Labs_
+
 The governance system supports four proposal types, each triggering different contract actions when passed. All follow the same voting process—seven-day period, 50% quorum, permissionless execution.
 
 ## Funding Proposals

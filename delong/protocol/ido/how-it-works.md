@@ -1,5 +1,7 @@
 # How IDO Works
 
+_Author: Dylan, Avinasi Labs_
+
 The Initial Data Offering enables projects to raise capital through a fair, continuous pricing mechanism that rewards early participation.
 
 ## Basic Flow
