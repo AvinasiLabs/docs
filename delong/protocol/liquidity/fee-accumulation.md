@@ -22,9 +22,9 @@ $$
 $$
 
 Where:
-- $\text{LP Value}_0$ = Initial value at launch
-- $\text{Volume}_i$ = Trading volume in period $i$
-- $0.003$ = 0.3% fee rate
+- $$\text{LP Value}_0$$ = Initial value at launch
+- $$\text{Volume}_i$$ = Trading volume in period $$i$$
+- $$0.003$$ = 0.3% fee rate
 
 ### Example Accumulation
 

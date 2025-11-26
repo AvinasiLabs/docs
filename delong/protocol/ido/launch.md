@@ -10,9 +10,9 @@ $$
 \text{soldTokens} = S_{sale}
 $$
 
-where $S_{sale}$ = $(1 - \alpha) \times S_{total}$ represents the tokens allocated for public sale.
+where $$S_{sale}$$ = $$(1 - \alpha) \times S_{total}$$ represents the tokens allocated for public sale.
 
-The virtual AMM is constructed such that when all salable tokens are purchased, the accumulated USDC (after fees) closely approximates the funding goal $R_{target}$. Minor differences may occur due to rounding across multiple transactions, but the protocol uses the actual accumulated USDC balance rather than the theoretical target for capital distribution.
+The virtual AMM is constructed such that when all salable tokens are purchased, the accumulated USDC (after fees) closely approximates the funding goal $$R_{target}$$. Minor differences may occur due to rounding across multiple transactions, but the protocol uses the actual accumulated USDC balance rather than the theoretical target for capital distribution.
 
 Launch execution is automatic and permissionless—the purchase transaction that sells the final tokens immediately triggers the launch process in the same transaction. The protocol enforces a 100-day fundraising period. Projects that fail to sell all tokens within this period can enter a failed state, enabling refunds to investors.
 
@@ -43,10 +43,10 @@ USDC_{treasury} = USDC_{balance} - USDC_{LP}
 $$
 
 where:
-- $USDC_{balance}$ = actual accumulated USDC from all sales (after protocol fees)
-- $S_{LP} = \alpha \times S_{total}$ = tokens reserved for liquidity pairing
-- $P_{final}$ = price calculated from virtual AMM reserves at launch (when all tokens are sold)
-- $x_{final}$, $y_{final}$ = virtual AMM reserve states at the moment `soldTokens == salableTokens`
+- $$USDC_{balance}$$ = actual accumulated USDC from all sales (after protocol fees)
+- $$S_{LP} = \alpha \times S_{total}$$ = tokens reserved for liquidity pairing
+- $$P_{final}$$ = price calculated from virtual AMM reserves at launch (when all tokens are sold)
+- $$x_{final}$$, $$y_{final}$$ = virtual AMM reserve states at the moment `soldTokens == salableTokens`
 
 ## Launch Price Calculation
 
@@ -56,7 +56,7 @@ $$
 P_{launch} = \frac{USDC_{LP}}{S_{LP}}
 $$
 
-This price represents the market-clearing price after all fundraising is complete. Early IDO participants who purchased near $P_0 = 0.01$ receive tokens at prices far below $P_{launch}$, while the last participants purchase close to launch pricing.
+This price represents the market-clearing price after all fundraising is complete. Early IDO participants who purchased near $$P_0 = 0.01$$ receive tokens at prices far below $$P_{launch}$$, while the last participants purchase close to launch pricing.
 
 ## Permanent Liquidity Guarantee
 
@@ -76,9 +76,9 @@ No emergency withdrawals, admin overrides, or alternative extraction paths exist
 All launch operations execute in a single transaction. Either the entire process succeeds—pool created, treasury deposited, transfers enabled—or the transaction reverts leaving fundraising status unchanged. The execution sequence includes:
 
 1. **Calculate final state** – Determine final price from virtual + real reserves
-2. **Calculate LP requirements** – Compute $USDC_{LP}$ and verify sufficiency
-3. **Create Uniswap LP** – Pair $USDC_{LP}$ with $S_{LP}$ tokens, mint LP tokens to governance
-4. **Deposit treasury** – Transfer $USDC_{treasury}$ to governance internal balance
+2. **Calculate LP requirements** – Compute $$USDC_{LP}$$ and verify sufficiency
+3. **Create Uniswap LP** – Pair $$USDC_{LP}$$ with $$S_{LP}$$ tokens, mint LP tokens to governance
+4. **Deposit treasury** – Transfer $$USDC_{treasury}$$ to governance internal balance
 5. **Enable transfers** – Unfreeze token contract to allow trading
 6. **Update phase** – Mark fundraising as completed
 
@@ -116,12 +116,12 @@ Anyone can verify launch executed correctly by querying on-chain state:
 **LP creation verification:**
 1. Query Uniswap Factory for pair address: `factory.getPair(datasetToken, USDC)`
 2. Check LP token balance: `lpToken.balanceOf(governance)` equals total LP token supply
-3. Verify pool reserves match expected $USDC_{LP}$ and $S_{LP}$ values
+3. Verify pool reserves match expected $$USDC_{LP}$$ and $$S_{LP}$$ values
 4. Confirm LP tokens have no alternative holders
 
 **Treasury deposit verification:**
 1. Query governance treasury balance
-2. Verify equals expected $USDC_{treasury} = R_{target} - USDC_{LP}$
+2. Verify equals expected $$USDC_{treasury} = R_{target} - USDC_{LP}$$
 3. Check no withdrawal proposals have executed yet
 4. Confirm treasury can only decrease via proposal execution
 

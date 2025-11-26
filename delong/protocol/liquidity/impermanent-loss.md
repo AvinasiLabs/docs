@@ -16,9 +16,9 @@ $$
 K = x \times y
 $$
 
-Where $x$ = USDC amount, $y$ = token amount.
+Where $$x$$ = USDC amount, $$y$$ = token amount.
 
-At any price $P = x/y$, the pool holds:
+At any price $$P = x/y$$, the pool holds:
 
 $$
 y = \sqrt{\frac{K}{P}}
@@ -30,7 +30,7 @@ $$
 
 ### Initial State
 
-LP provides \$25,000 USDC and 625,000 tokens at $P_0 = 0.04$:
+LP provides \$25,000 USDC and 625,000 tokens at $$P_0 = 0.04$$:
 
 $$
 K = 25,000 \times 625,000 = 15,625,000,000
@@ -38,7 +38,7 @@ $$
 
 ### After Price Increase
 
-If price rises to $P_1 = 0.16$ (4x increase):
+If price rises to $$P_1 = 0.16$$ (4x increase):
 
 $$
 y_1 = \sqrt{\frac{15,625,000,000}{0.16}} = 312,500 \text{ tokens}
@@ -56,7 +56,7 @@ $$
 
 ## IL Formula
 
-General impermanent loss for price multiplier $k$:
+General impermanent loss for price multiplier $$k$$:
 
 $$
 \text{IL} = \frac{2\sqrt{k}}{1 + k} - 1

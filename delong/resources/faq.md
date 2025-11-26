@@ -20,7 +20,7 @@ See [Security](security.md) for audit reports and bug bounty information.
 
 **How does Virtual AMM pricing work?**
 
-Initial price starts at $0.01 and rises continuously as tokens sell, following constant product formula $K = x \times y$. Earlier participants receive better pricing.
+Initial price starts at $$0.01 and rises continuously as tokens sell, following constant product formula $$K = x \times y$. Earlier participants receive better pricing.
 
 **What happens if IDO doesn't sell all tokens in 100 days?**
 

@@ -30,13 +30,13 @@ $$
 P = \frac{x}{y}
 $$
 
-As USDC accumulates ($x$ increases) and tokens are distributed ($y$ decreases), this ratio grows continuously.
+As USDC accumulates ($$x$$ increases) and tokens are distributed ($$y$$ decreases), this ratio grows continuously.
 
 ### Price Evolution Example
 
-Consider a dataset starting with virtual reserves $x_0 = 2,525$ USDC and $y_0 = 252,525$ tokens:
+Consider a dataset starting with virtual reserves $$x_0 = 2,525$$ USDC and $$y_0 = 252,525$$ tokens:
 
-| Investment | $x$ (USDC) | $y$ (tokens) | Price (USDC/token) |
+| Investment | $$x$$ (USDC) | $$y$$ (tokens) | Price (USDC/token) |
 |-----------|-----------|-------------|-------------------|
 | Start | 2,525 | 252,525 | 0.0100 |
 | After 5,000 USDC | 7,525 | 84,842 | 0.0887 |
@@ -48,7 +48,7 @@ The price increases from \$0.01 to over \$4.00—a 400x+ appreciation—demonstr
 
 ## Average Purchase Price
 
-While the marginal price represents the instantaneous exchange rate, investors actually pay an average price across their entire purchase due to price impact. For a purchase of $\Delta x$ USDC receiving $\Delta y$ tokens, the average price paid is:
+While the marginal price represents the instantaneous exchange rate, investors actually pay an average price across their entire purchase due to price impact. For a purchase of $$\Delta x$$ USDC receiving $$\Delta y$$ tokens, the average price paid is:
 
 $$
 P_{avg} = \frac{\Delta x}{\Delta y}
@@ -58,19 +58,19 @@ This average price always exceeds the marginal price before the trade but is les
 
 ### Example: Purchase Impact
 
-Starting state: $x = 10,000$ USDC, $y = 100,000$ tokens, $K = 1,000,000,000$
+Starting state: $$x = 10,000$$ USDC, $$y = 100,000$$ tokens, $$K = 1,000,000,000$$
 
 **Small purchase (100 USDC):**
-- Tokens received: $\Delta y = \frac{100,000 \times 100}{10,000 + 100} = 990.1$ tokens
-- Average price: $\frac{100}{990.1} = 0.101$ USDC/token
-- Price before: $\frac{10,000}{100,000} = 0.100$
-- Price after: $\frac{10,100}{99,010} = 0.102$
+- Tokens received: $$\Delta y = \frac{100,000 \times 100}{10,000 + 100} = 990.1$$ tokens
+- Average price: $$\frac{100}{990.1} = 0.101$$ USDC/token
+- Price before: $$\frac{10,000}{100,000} = 0.100$$
+- Price after: $$\frac{10,100}{99,010} = 0.102$$
 
 **Large purchase (1,000 USDC):**
-- Tokens received: $\Delta y = \frac{100,000 \times 1,000}{10,000 + 1,000} = 9,090.9$ tokens
-- Average price: $\frac{1,000}{9,090.9} = 0.110$ USDC/token
+- Tokens received: $$\Delta y = \frac{100,000 \times 1,000}{10,000 + 1,000} = 9,090.9$$ tokens
+- Average price: $$\frac{1,000}{9,090.9} = 0.110$$ USDC/token
 - Price before: \$0.100$
-- Price after: $\frac{11,000}{90,909} = 0.121$
+- Price after: $$\frac{11,000}{90,909} = 0.121$$
 
 The large purchase pays 10% more than the marginal price before purchase, while the small purchase pays only 1% more. This price impact discourages single large purchases and naturally distributes token ownership.
 

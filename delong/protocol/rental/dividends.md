@@ -100,7 +100,7 @@ Compare to naive distribution: 1,000 holders = ~20M gas, exceeding most block li
 
 ## Precision Handling
 
-The algorithm multiplies by $10^{18}$ to maintain precision with integer arithmetic:
+The algorithm multiplies by $$10^{18}$$ to maintain precision with integer arithmetic:
 
 $$
 \text{accRevenuePerToken} = \frac{\text{Revenue} \times 10^{18}}{\text{Total Supply}}

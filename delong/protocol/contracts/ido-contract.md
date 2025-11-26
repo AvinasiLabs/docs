@@ -72,13 +72,13 @@ $$
 K = x \times y
 $$
 
-For a buy of $\Delta y$ tokens:
+For a buy of $$\Delta y$$ tokens:
 
 $$
 \text{Cost} = \frac{x \cdot \Delta y}{y - \Delta y}
 $$
 
-For a sell of $\Delta y$ tokens:
+For a sell of $$\Delta y$$ tokens:
 
 $$
 \text{Refund} = \frac{x \cdot \Delta y}{y + \Delta y}
@@ -95,7 +95,7 @@ Launch triggers when `soldTokens == salableTokens` (all salable tokens sold). Th
 3. Calculates final price from virtual reserves
 4. Determines LP allocation using project's actual `usdcBalance` (not rTarget)
 5. Creates Uniswap V2 pair if needed
-6. Adds liquidity: $USDC_{LP} = S_{LP} \times P_{final}$ and corresponding tokens
+6. Adds liquidity: $$USDC_{LP} = S_{LP} \times P_{final}$$ and corresponding tokens
 7. Locks LP tokens in Governance
 8. Transfers remaining USDC and project tokens to Governance treasury
 9. Unfreezes token transfers via `DatasetToken.unfreeze()`

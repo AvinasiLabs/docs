@@ -41,7 +41,7 @@ $$
 S_{total} = \frac{R_{target}}{P_0} \cdot \sqrt{\frac{\alpha}{(1-\alpha)^3}}
 $$
 
-Where $P_0 = 0.01$ USDC (initial price). This deterministic formula ensures consistent token economics across datasets.
+Where $$P_0 = 0.01$$ USDC (initial price). This deterministic formula ensures consistent token economics across datasets.
 
 ## Minimal Proxy Pattern
 
