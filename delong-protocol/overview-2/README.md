@@ -7,6 +7,6 @@ You'll learn about the TEE-secured Jupyter environments that enable privacy-pres
 The `DeLong Laboratory` provides the following modules:
 
 * Datasets: `delong-datasets` Python SDK for accessing sensitive life sciences datasets with built-in security controls.
-* Foundation Models:
-* Models SDK:
-* Projects:
+* Foundation Models: Hub for state-of-the-art artificial intelligence in biology, including web demos, API/MCP and Python SDK.
+* Projects: A unified workspace designed to manage the entire lifecycle of a life science discovery with confidential cloud computing, code hosting, AI research assistant and team collaboration.
+
