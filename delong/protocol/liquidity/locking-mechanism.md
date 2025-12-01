@@ -1,4 +1,4 @@
-# LP Locking Mechanism
+# Locking Mechanism
 
 _Author: Dylan, Avinasi Labs_
 
@@ -10,9 +10,9 @@ Uniswap LP tokens created at launch are permanently locked in the Governance con
 
 **DeLong's solution**: LP tokens are minted directly to the Governance contract and cannot be transferred out except through delisting votes. This creates three protections:
 
-- **Guaranteed exit liquidity** - Investors can always trade on Uniswap regardless of team actions
-- **Rug pull prevention** - Teams cannot remove liquidity to exit positions
-- **Capital recovery option** - Failed projects can reclaim LP value through democratic delisting
+* **Guaranteed exit liquidity** - Investors can always trade on Uniswap regardless of team actions
+* **Rug pull prevention** - Teams cannot remove liquidity to exit positions
+* **Capital recovery option** - Failed projects can reclaim LP value through democratic delisting
 
 ## How Locking Works
 
@@ -25,18 +25,19 @@ When an IDO completes successfully:
 5. No transfer functions exist except delisting execution
 
 The Governance contract holds LP tokens with **no** ability to:
-- Transfer LP tokens to external addresses
-- Approve external contracts to access LP tokens
-- Remove liquidity during normal operations
-- Upgrade contract to add removal functions
+
+* Transfer LP tokens to external addresses
+* Approve external contracts to access LP tokens
+* Remove liquidity during normal operations
+* Upgrade contract to add removal functions
 
 ## Lock as Investor Protection
 
-| Feature | DeLong Permanent Lock | Traditional Time Lock | No Lock |
-|---------|----------------------|---------------------|---------|
-| **Duration** | Until delisting vote | 6-12 months | None |
-| **Removal** | Requires 50%+ vote | Automatic expiry | Team unilateral |
-| **Protection** | Permanent | Temporary | None |
+| Feature        | DeLong Permanent Lock | Traditional Time Lock | No Lock         |
+| -------------- | --------------------- | --------------------- | --------------- |
+| **Duration**   | Until delisting vote  | 6-12 months           | None            |
+| **Removal**    | Requires 50%+ vote    | Automatic expiry      | Team unilateral |
+| **Protection** | Permanent             | Temporary             | None            |
 
 Traditional time locks expire. DeLong's lock persists until formal shutdown via majority vote.
 
@@ -44,12 +45,12 @@ Traditional time locks expire. DeLong's lock persists until formal shutdown via 
 
 Anyone can verify LP tokens are locked:
 
-- **Check LP balance** - Query LP token contract for Governance balance
-- **Read contract code** - Verify no transfer functions exist except delisting
-- **Monitor events** - Watch for suspicious LP token movements
-- **Verify no approvals** - Confirm governance has no standing approvals
+* **Check LP balance** - Query LP token contract for Governance balance
+* **Read contract code** - Verify no transfer functions exist except delisting
+* **Monitor events** - Watch for suspicious LP token movements
+* **Verify no approvals** - Confirm governance has no standing approvals
 
-See [Verification Methods](verification.md) for detailed steps.
+See [Verification Methods](/broken/pages/HTMsQEQcrkoM7Tv8Oh39) for detailed steps.
 
 ## Delisting: The Only Exception
 
