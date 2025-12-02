@@ -70,7 +70,34 @@ $$
 0.01 \cdot y_0 \cdot S_{sale} = R_{target}(y_0 - S_{sale})
 $$
 
-This equation, along with the supply formula $$S_{total} = S_{sale} + S_{LP}$$ and the geometric mean calculation, determines the unique values of $$(x_0, y_0)$$ that satisfy all constraints.
+## Solving for Virtual Reserves
+
+From the constraint equation above, we solve for $$y_0$$:
+
+$$
+P_0 \cdot y_0 \cdot S_{sale} = R_{target} \cdot (y_0 - S_{sale})
+$$
+
+$$
+y_0 \cdot (R_{target} - P_0 \cdot S_{sale}) = R_{target} \cdot S_{sale}
+$$
+
+$$
+y_0 = \frac{R_{target} \cdot S_{sale}}{R_{target} - P_0 \cdot S_{sale}}
+$$
+
+And from the initial price constraint $$x_0 = P_0 \cdot y_0$$:
+
+$$
+x_0 = \frac{P_0 \cdot R_{target} \cdot S_{sale}}{R_{target} - P_0 \cdot S_{sale}}
+$$
+
+These formulas, combined with the supply formula $$S_{total} = S_{sale} + S_{LP}$$ and the geometric mean calculation, determine the unique values of $$(x_0, y_0)$$ that satisfy all constraints.
+
+**Example**: For $$R_{target} = 50,000$$ USDC, $$\alpha = 0.20$$, $$P_0 = 0.01$$:
+- $$S_{sale} = 2,500,000$$ tokens
+- $$y_0 = \frac{50,000 \times 2,500,000}{50,000 - 0.01 \times 2,500,000} = \frac{125 \times 10^9}{25,000} = 5,000,000$$ tokens
+- $$x_0 = 0.01 \times 5,000,000 = 50,000$$ USDC
 
 ## Reserve Transition
 

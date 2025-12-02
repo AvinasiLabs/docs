@@ -12,13 +12,12 @@ Official DeLong Protocol contract addresses across supported networks.
 
 **Status**: Active development - contract addresses may change during testing phase
 
-**Factory**: [`0xEf5d570CD0b88381462d50b968C9b40e67799917`](https://sepolia.etherscan.io/address/0xEf5d570CD0b88381462d50b968C9b40e67799917)
+**Factory**: [`0x4d76e333118B7957901F480fd2EAEcf080A31408`](https://sepolia.etherscan.io/address/0x4d76e333118B7957901F480fd2EAEcf080A31408)
 
 **Implementation Addresses**:
-- IDO Implementation: [`0x1f8D97Fa437eB12Af0CeAc587C5a60759426862F`](https://sepolia.etherscan.io/address/0x1f8D97Fa437eB12Af0CeAc587C5a60759426862F)
-- DatasetToken Implementation: [`0x66226fDD6E8125896D5564daB4701D39E703705C`](https://sepolia.etherscan.io/address/0x66226fDD6E8125896D5564daB4701D39E703705C)
-- Governance Implementation: TBD
-- RentalPool Implementation: [`0xB92Bb83378818E62F24e8Db0035F11A9bfCE86Bc`](https://sepolia.etherscan.io/address/0xB92Bb83378818E62F24e8Db0035F11A9bfCE86Bc)
+- IDO Implementation: [`0x92A1f6d4c37b11ac0e51361F26a73AC753a11968`](https://sepolia.etherscan.io/address/0x92A1f6d4c37b11ac0e51361F26a73AC753a11968)
+- DatasetToken Implementation: [`0x30B43A8283695E869CdDc344FD000f1a8a28E5b1`](https://sepolia.etherscan.io/address/0x30B43A8283695E869CdDc344FD000f1a8a28E5b1)
+- RentalPool Implementation: [`0xB423b0DC71bdace30cB6eF3806493e30C770CD72`](https://sepolia.etherscan.io/address/0xB423b0DC71bdace30cB6eF3806493e30C770CD72)
 
 **External Dependencies**:
 - Mock USDC: [`0x2bfD56D08d549544AA492Ca021fc3Eb959386Fc0`](https://sepolia.etherscan.io/address/0x2bfD56D08d549544AA492Ca021fc3Eb959386Fc0)
