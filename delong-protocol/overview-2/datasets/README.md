@@ -1,6 +1,6 @@
 # Datasets
 
-**delong-datasets** is a Python library for accessing sensitive life sciences datasets with built-in security controls. It extends HuggingFace's `datasets` library with:
+**delong-datasets** provides datasets rental service and a Python library for accessing sensitive life sciences datasets with built-in security controls.&#x20;
 
 * **🔒 TEE Security**: Automatic attestation-based access control
 * **🎯 Smart Degradation**: Sample data in dev environments, real data in secure TEE
