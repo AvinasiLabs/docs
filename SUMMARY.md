@@ -36,6 +36,7 @@
     * [DatasetToken Contract](delong/protocol/contracts/token-contract.md)
     * [RentalPool Contract](delong/protocol/contracts/rental-pool.md)
 * [Infrastructure](delong/infrastructure/overview.md)
+  * [Architecture walkthrough](delong/infrastructure/architecture.md)
   * [Two-plane architecture](delong/infrastructure/two-plane-architecture.md)
   * [Compute modes](delong/infrastructure/compute-modes.md)
   * [Data encryption](delong/infrastructure/data-encryption.md)

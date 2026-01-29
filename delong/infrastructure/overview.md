@@ -18,7 +18,7 @@ The architecture splits into two TEE planes. The **Privacy Plane** (Phala dstack
 
 ## Architecture at a glance
 
-The pages that follow cover each layer in detail:
+The [architecture walkthrough](architecture.md) explains how these components connect end-to-end. The pages that follow cover each layer in detail:
 
 - [Two-plane architecture](two-plane-architecture.md) — Privacy Plane and Computing Plane separation
 - [Compute modes](compute-modes.md) — Explore Mode and Secure Mode
