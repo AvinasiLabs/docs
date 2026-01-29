@@ -2,19 +2,21 @@
 
 _Author: Dylan, Avinasi Labs_
 
-Avinasi infrastructure lets data providers monetize sensitive datasets without exposing raw records. Consumers run arbitrary code against that data and receive verified results. The system relies on hardware-enforced confidential computing rather than legal agreements or access-control lists.
+Avinasi infrastructure lets data providers monetize sensitive datasets without exposing raw records, and lets consumers run arbitrary code against that data with verified results.
 
-## What providers get
+## Trust model
 
-Datasets are encrypted with a per-dataset key before they leave the provider's machine. At rest the ciphertext sits in object storage. In transit it travels over TLS. In memory it is decrypted only inside a Trusted Execution Environment whose integrity can be verified by remote attestation. Authorization checks run on-chain: a consumer must hold an active rental before the **Privacy Plane** releases any decryption material.
+Data is end-to-end encrypted from the provider's machine into the TEE. Avinasi never sees plaintext at any point during upload, storage, or transit.
 
-## What consumers get
+The logic inside the TEE is hardcoded: it only responds to on-chain requests. No one — not the data consumer, not Avinasi itself — can run an algorithm, move data to a different location, or extract plaintext without that action being recorded on-chain. Every operation against every dataset is fully auditable.
 
-Consumers write ordinary Python against a POSIX filesystem. No SDK lock-in, no API wrappers. A two-stage workflow separates exploration from production: **Explore Mode** offers interactive Jupyter access to desensitized samples, while **Secure Mode** runs batch jobs against full encrypted data inside an isolated Confidential VM. Every output passes through the **Output Gate** before it reaches the consumer.
+## What this enables
 
-## What developers get
+**For providers**: datasets are encrypted with a per-dataset key. At rest the ciphertext sits in object storage. In memory it is decrypted only inside a TEE whose integrity can be verified by remote attestation. A consumer must hold an active on-chain rental before the **Privacy Plane** releases any decryption material.
 
-The architecture splits into two TEE planes. The **Privacy Plane** (Phala dstack) manages key derivation, wallet authentication, and on-chain rental verification. The **Computing Plane** (Google Confidential VM, Intel TDX) executes consumer workloads in ephemeral CVMs that are destroyed after each job. Per-dataset Data Encryption Keys flow from Privacy Plane to Computing Plane over an ECDH channel established after remote attestation succeeds.
+**For consumers**: write ordinary Python against a POSIX filesystem. **Explore Mode** offers interactive Jupyter access to desensitized samples. **Secure Mode** runs batch jobs against full encrypted data inside an isolated Confidential VM. Every output passes through the **Output Gate**.
+
+**For developers**: the architecture splits into two TEE planes. The **Privacy Plane** (Phala dstack) manages key derivation and on-chain verification. The **Computing Plane** (Google Confidential VM, Intel TDX) executes workloads in ephemeral CVMs destroyed after each job.
 
 ## Architecture at a glance
 
