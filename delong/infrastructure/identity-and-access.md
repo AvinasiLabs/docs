@@ -12,7 +12,7 @@ The wallet private key stays on the consumer's device. It is never transmitted t
 
 ## On-chain rental verification
 
-After verifying the wallet signature, the Privacy Plane queries the DeLong smart contracts to check whether the wallet holds an active rental for each requested dataset. The query calls `isActiveRenter(user, datasets)` against the on-chain state. If any dataset is not actively rented, the request is rejected.
+After verifying the wallet signature, the Privacy Plane queries the Avinasi Protocol smart contracts to check whether the wallet holds an active rental for each requested dataset. The query calls `hasAccess(user)` on each dataset's **RentalOnly** contract. If any dataset returns false, the request is rejected.
 
 This check runs at job submission time. A rental that expires mid-job does not interrupt execution — the Authorization Token was already issued and the DEKs were already delivered to the CVM.
 

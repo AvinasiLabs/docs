@@ -2,7 +2,7 @@
 
 _Author: Dylan, Avinasi Labs_
 
-DeLong infrastructure lets data providers monetize sensitive datasets without exposing raw records. Consumers run arbitrary code against that data and receive verified results. The system relies on hardware-enforced confidential computing rather than legal agreements or access-control lists.
+Avinasi infrastructure lets data providers monetize sensitive datasets without exposing raw records. Consumers run arbitrary code against that data and receive verified results. The system relies on hardware-enforced confidential computing rather than legal agreements or access-control lists.
 
 ## What providers get
 
