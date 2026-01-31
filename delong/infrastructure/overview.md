@@ -2,7 +2,7 @@
 
 _Author: Dylan, Avinasi Labs_
 
-Avinasi infrastructure lets data providers monetize sensitive datasets without exposing raw records, and lets consumers run arbitrary code against that data with verified results.
+Avinasi infrastructure lets data providers monetize desensitized datasets while keeping raw records private. Consumers run arbitrary code against that data and receive verified results.
 
 ## Trust model
 
