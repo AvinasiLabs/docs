@@ -2,7 +2,7 @@
 
 _Author: Dylan, Avinasi Labs_
 
-Getting a DEK from the **Privacy Plane** into a **Computing Plane** CVM requires three things: proof that the consumer is authorized, proof that the CVM is genuine, and a secure channel between them. This page covers the Authorization Token, the Remote Attestation step, and the ECDH key exchange that ties them together.
+Getting a DEK from the **Privacy Plane** into a **Computing Plane** CVM requires three things: proof that the consumer is authorized, proof that the CVM is genuine, and a secure channel between them. This page covers the Authorization Token, the Remote Attestation step, and the ECDHE key exchange that ties them together.
 
 ## Authorization Token
 
@@ -18,11 +18,11 @@ Before issuing the token, the Privacy Plane verifies the consumer's wallet signa
 
 ## Remote Attestation
 
-After the CVM boots, it generates an ephemeral ECDH keypair and produces a TDX attestation report. The report's `REPORTDATA` field contains a hash of the ephemeral public key, binding that key to the CVM's hardware measurements.
+After the CVM boots, it generates an ephemeral ECDHE keypair and produces a TDX attestation report. The report's `REPORTDATA` field contains a hash of the ephemeral public key, binding that key to the CVM's hardware measurements.
 
 The CVM sends three items to the Privacy Plane: the Authorization Token, the attestation report, and the ephemeral public key.
 
-## Verification and ECDH exchange
+## Verification and ECDHE exchange
 
 The Privacy Plane performs five checks in sequence:
 
@@ -32,13 +32,13 @@ The Privacy Plane performs five checks in sequence:
 4. Verify the TDX attestation report against known-good measurements.
 5. Verify the ephemeral public key matches the hash in `REPORTDATA`.
 
-If all checks pass, the Privacy Plane derives the requested DEKs, computes an ECDH shared secret from its own private key and the CVM's ephemeral public key, encrypts the DEKs with the shared secret, and returns the ciphertext.
+If all checks pass, the Privacy Plane derives the requested DEKs, computes an ECDHE shared secret from its own private key and the CVM's ephemeral public key, encrypts the DEKs with the shared secret, and returns the ciphertext.
 
 The CVM computes the same shared secret from its ephemeral private key and the Privacy Plane's public key, decrypts the DEKs, and loads each one into its corresponding Decrypt FUSE instance.
 
 ## Security properties
 
-The consumer's wallet private key never enters the CVM. The Authorization Token is single-use — replaying a nonce causes rejection. The ECDH channel is ephemeral and forward-secret. Compromising a CVM after the job ends yields nothing because the ephemeral keys are destroyed with the CVM.
+The consumer's wallet private key never enters the CVM. The Authorization Token is single-use — replaying a nonce causes rejection. The ECDHE channel is ephemeral and forward-secret. Compromising a CVM after the job ends yields nothing because the ephemeral keys are destroyed with the CVM.
 
 ## Nonce management
 

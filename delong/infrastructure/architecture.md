@@ -17,9 +17,9 @@ The **Privacy Plane** runs on Phala dstack and manages three concerns:
 - **Data Encryption**: derives and holds per-dataset DEKs. Keys never leave TEE memory in plaintext.
 - **Key Management**: maintains the root KEK and derives DEKs deterministically by dataset ID.
 - **Access Control**: verifies wallet signatures, checks on-chain rental status, and issues one-time **Authorization Tokens** that grant a CVM access to specific datasets.
-- **Compute Scheduler**: coordinates CVM provisioning and token injection for Secure Mode jobs.
+- **Compute Controller**: manages CVM lifecycle, image configuration, measurement registration, and token injection for Secure Mode jobs.
 
-When a consumer submits a job, the Privacy Plane verifies identity and rental, signs an Authorization Token, and hands it to the Computing Plane. After the CVM passes Remote Attestation (TDX/SEV verification), the Privacy Plane delivers DEKs over an ECDH-encrypted channel.
+When a consumer submits a job, the Privacy Plane verifies identity and rental, signs an Authorization Token, and hands it to the Computing Plane. After the CVM passes Remote Attestation (TDX/SEV verification), the Privacy Plane delivers DEKs over an ECDHE-encrypted channel.
 
 ## Computing Plane
 
@@ -43,7 +43,7 @@ When a consumer submits an algorithm for Secure Mode, the source bundle, lockfil
 1. Provider encrypts data with a per-dataset DEK and uploads ciphertext to Object Storage.
 2. Consumer authenticates with a wallet signature. The Privacy Plane verifies rental status on-chain.
 3. Privacy Plane issues an Authorization Token and starts a CVM.
-4. CVM generates a TDX attestation report. Privacy Plane verifies it and delivers DEKs over ECDH.
+4. CVM generates a TDX attestation report. Privacy Plane verifies it and delivers DEKs over ECDHE.
 5. Decrypt FUSE mounts the dataset. Consumer code reads plaintext from a POSIX path.
 6. Job completes. Output passes through the Output Gate.
 7. If the risk score is below threshold, the consumer gets the result. Otherwise, human review is triggered using the algorithm source from the DA layer.

@@ -24,8 +24,8 @@ Inside a Secure Mode CVM, a two-layer FUSE stack provides transparent decryption
 
 The two planes establish trust through remote attestation and ephemeral key exchange:
 
-1. The CVM generates a TDX attestation report that binds an ephemeral ECDH public key to its hardware measurements.
-2. The Privacy Plane verifies the attestation report, confirms the Authorization Token, and encrypts DEKs with the ECDH shared secret.
+1. The CVM generates a TDX attestation report that binds an ephemeral ECDHE public key to its hardware measurements.
+2. The Privacy Plane verifies the attestation report, confirms the Authorization Token, and encrypts DEKs with the ECDHE shared secret.
 3. The CVM decrypts the DEKs and loads them into Decrypt FUSE instances.
 
 At no point does any party outside a TEE boundary see plaintext DEKs. The consumer's wallet private key never enters the CVM. The Privacy Plane never sees consumer code or output.

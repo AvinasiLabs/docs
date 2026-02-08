@@ -27,7 +27,7 @@ Intel TDX (Trust Domain Extensions) creates isolated virtual machines called Tru
 
 Attestation lets a remote party verify that a CVM is running expected code on genuine TEE hardware. The process works in three steps:
 
-1. The CVM asks the CPU to produce a hardware-signed report containing measurements of the loaded code and a caller-supplied data field (used to bind an ECDH public key).
+1. The CVM asks the CPU to produce a hardware-signed report containing measurements of the loaded code and a caller-supplied data field (used to bind an ECDHE public key).
 2. The report is sent to the verifier (the Privacy Plane or an external attestation service).
 3. The verifier checks the CPU signature, confirms the measurements match a known-good value, and validates the caller-supplied data.
 
