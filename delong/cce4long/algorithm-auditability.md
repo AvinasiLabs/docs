@@ -2,7 +2,7 @@
 
 _Author: Dylan, Avinasi Labs_
 
-When the **Output Gate** holds a result for human review, the reviewer needs to understand what the algorithm does. Auditability requires that every algorithm submitted to Secure Mode has a verifiable identity and retrievable source. This page covers the identity scheme, storage layout, and reproducible build process.
+When the **Output Gate** holds a result for human review, the reviewer needs to understand what the algorithm does. Auditability requires that every algorithm submitted to Privacy Mode has a verifiable identity and retrievable source. This page covers the identity scheme, storage layout, and reproducible build process.
 
 ## Algorithm identity
 
