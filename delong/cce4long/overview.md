@@ -2,7 +2,17 @@
 
 _Author: Dylan, Avinasi Labs_
 
-**Confidential Computing Engine for Longevity** — a confidential computing engine that enables privacy-preserving AI research on sensitive longevity data. Data providers monetize datasets while keeping raw records private. Consumers run arbitrary code against that data and receive verified results. Data never leaves the TEE — only verified, auditable results are delivered.
+**Confidential Computing Engine for Longevity** — a confidential computing engine that enables privacy-preserving AI research on sensitive longevity data.
+
+## Why cce4long
+
+cce4long solves three business problems:
+
+1. **Sensitive data must stay private, even during computation** — cce4long encrypts datasets in TEE memory and never exposes plaintext outside the TEE boundary. Data providers monetize their data without losing control. Every operation is recorded on-chain, and all outputs are auditable.
+2. **Algorithm consumers won't rewrite code for a proprietary platform** — cce4long exposes data through a standard POSIX filesystem (JuiceFS + FUSE). Existing Python, R, and scientific computing toolchains work without modification.
+3. **The platform must evolve without breaking data access** — per-dataset keys are derived deterministically from a hardware-bound root key. System upgrades do not invalidate existing ciphertext or key material.
+
+What cce4long delivers is not compute time — it is **verifiable results**: TEE attestation proves execution identity, key and access controls enforce data boundaries, and the Output Gate with signed Result Manifests ensures results are auditable and tamper-evident.
 
 ## Trust model
 

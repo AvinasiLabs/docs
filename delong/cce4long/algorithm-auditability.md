@@ -19,7 +19,7 @@ The image digest is the primary identifier. Two submissions with the same digest
 
 | Content | Location | Retention |
 |---------|----------|-----------|
-| Source bundle (.tar.gz) | DA layer (Celestia) | Short-term (~7 days) |
+| Source bundle (.tar.gz) | DA layer | Short-term (~7 days) |
 | Lockfile / SBOM | DA layer | Short-term |
 | Dockerfile | DA layer | Short-term |
 | Image digest | On-chain | Permanent |
@@ -27,10 +27,6 @@ The image digest is the primary identifier. Two submissions with the same digest
 | DA blob ID | On-chain | Permanent |
 
 Source code and build artifacts go to a data availability layer for short-term retrieval during the review window. On-chain records are permanent and allow anyone to verify that a given source hash corresponds to a given image digest, even after the DA blob expires.
-
-## DA layer selection
-
-Celestia is the recommended DA layer. At roughly $0.07/MB it is the cheapest option with a mature ecosystem. Alternatives include EigenDA (Ethereum restaking-based, low cost) and Avail (multi-chain compatible). Ethereum L1 blobs cost approximately $3.83/MB, which is too expensive for algorithm source bundles.
 
 ## Reproducible builds
 

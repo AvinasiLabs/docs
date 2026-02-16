@@ -52,7 +52,7 @@ Only after all three checks pass does `cced` release DEKs or accept results. The
 
 ## DA Layer
 
-When a consumer submits an algorithm for Privacy Mode, the source bundle, lockfile, and Dockerfile are stored in the DA Layer (Celestia). The image digest and source hash are recorded on-chain permanently. If the Output Gate flags a result for human review, the reviewer retrieves the source from the DA layer and rebuilds the image to verify the digest. See [Algorithm auditability](algorithm-auditability.md) for details.
+When a consumer submits an algorithm for Privacy Mode, the source bundle, lockfile, and Dockerfile are stored in a DA layer. The image digest and source hash are recorded on-chain permanently. If the Output Gate flags a result for human review, the reviewer retrieves the source from the DA layer and rebuilds the image to verify the digest. See [Algorithm auditability](algorithm-auditability.md) for details.
 
 ## Why two planes
 
