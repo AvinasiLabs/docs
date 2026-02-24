@@ -4,17 +4,17 @@ _Author: Dylan, Avinasi Labs_
 
 The **Output Gate** prevents raw data from leaving the Privacy Mode CVM. It combines network isolation, automated detection, and human review into a defense-in-depth stack. The goal is not perfect detection — Rice's Theorem makes that impossible for arbitrary programs — but raising the cost of data exfiltration beyond any practical benefit.
 
-Output Gate is one of `cced`'s internal modules. When `tee-agent` submits a result, `cced` verifies the CVM's attestation report, decrypts and inspects the output, and decides whether to release it.
+Output Gate is a module within the Privacy Plane. When `tee-agent` submits a result, the Privacy Plane verifies the CVM's attestation report, decrypts and inspects the output, and decides whether to release it.
 
 ## Network isolation
 
-Privacy Mode CVMs have no outbound network access. This is enforced at the infrastructure level, not by firewall rules inside the VM. Blocking egress eliminates real-time exfiltration channels. The only way data leaves the CVM is through `tee-agent`'s SubmitResult call to `cced`.
+Privacy Mode CVMs have no outbound network access. This is enforced at the infrastructure level, not by firewall rules inside the VM. Blocking egress eliminates real-time exfiltration channels. The only way data leaves the CVM is through `tee-agent`'s SubmitResult call to the Privacy Plane.
 
 ## Result Encryption Key (REK)
 
-Each job receives a **Result Encryption Key** (REK) alongside its DEKs during the key exchange at job startup. The REK is derived by `cced`'s Key Manager from the `job_id`, so `cced` can re-derive the same REK at any time without the CVM transmitting it back.
+Each job receives a **Result Encryption Key** (REK) alongside its DEKs during the key exchange at job startup. The REK is derived by the Privacy Plane from the `job_id`, so it can re-derive the same REK at any time without the CVM transmitting it back.
 
-When the job finishes, `tee-agent` encrypts the output with the REK (AES-256-GCM) and uploads the ciphertext to object storage. `tee-agent` then submits a result notification to `cced` containing the `job_id`, result path, and result hash — but not the REK itself. `cced` re-derives the REK, downloads and decrypts the result for inspection.
+When the job finishes, `tee-agent` encrypts the output with the REK (AES-256-GCM) and uploads the ciphertext to object storage. `tee-agent` then submits a result notification to the Privacy Plane containing the `job_id`, result path, and result hash — but not the REK itself. The Privacy Plane re-derives the REK, downloads and decrypts the result for inspection.
 
 This design means the Output Gate can inspect every result, and no output reaches the consumer without passing through review.
 
@@ -59,9 +59,9 @@ Review outcomes:
 
 After a result reaches `approved` or `auto_approved` status, the consumer can request it:
 
-1. Consumer calls `cced` with their `job_id` and a wallet signature.
-2. `cced` verifies the consumer's identity and confirms the result's review status is approved.
-3. `cced` returns a signed **Result Manifest** (containing `job_id`, result path, result hash, and review decision) along with the REK encrypted to the consumer.
+1. Consumer calls the Privacy Plane with their `job_id` and a wallet signature.
+2. The Privacy Plane verifies the consumer's identity and confirms the result's review status is approved.
+3. The Privacy Plane returns a signed **Result Manifest** (containing `job_id`, result path, result hash, and review decision) along with the REK encrypted to the consumer.
 4. Consumer downloads the encrypted result from object storage.
 5. Consumer decrypts the REK, verifies the Result Manifest signature and result hash, and decrypts the result.
 

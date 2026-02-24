@@ -19,7 +19,7 @@ cce4long uses Confidential VM technologies for workload isolation:
 | Intel TDX | Computing Plane (Privacy Mode CVMs) | Google C3 series (or equivalent) | Full VM isolation |
 | AMD SEV-SNP | Computing Plane (alternative) | Available on multiple clouds | Full VM isolation |
 
-`cced` (the Privacy Plane daemon) also runs inside a TEE to protect key material and policy enforcement logic.
+The Privacy Plane also runs inside a TEE to protect key material and policy enforcement logic.
 
 Intel TDX (Trust Domain Extensions) creates isolated virtual machines called Trust Domains. The CPU encrypts all TD memory and prevents the VMM from reading or modifying it. SEV-SNP (Secure Encrypted Virtualization — Secure Nested Paging) from AMD provides equivalent guarantees with a different hardware implementation.
 
@@ -28,8 +28,8 @@ Intel TDX (Trust Domain Extensions) creates isolated virtual machines called Tru
 Attestation lets a remote party verify that a CVM is running expected code on genuine TEE hardware. The process works in three steps:
 
 1. `tee-agent` asks the CPU to produce a hardware-signed report containing measurements of the loaded code and a caller-supplied data field (used to bind an ECDHE public key).
-2. The report is sent to `cced`, which acts as the verifier via its TEE Verifier module.
-3. `cced` checks the CPU signature, confirms the measurements match a known-good value registered in the measurement whitelist, and validates the caller-supplied data.
+2. The report is sent to the Privacy Plane, which acts as the verifier.
+3. The Privacy Plane checks the CPU signature, confirms the measurements match a known-good value registered in the measurement whitelist, and validates the caller-supplied data.
 
 ## Threat model
 

@@ -6,13 +6,13 @@ Every dataset is encrypted with its own key before it reaches object storage. Pl
 
 ## Per-dataset DEK
 
-Each dataset gets an independent **Data Encryption Key** (DEK) derived from `cced`'s hardware-bound root key using the dataset identifier as input:
+Each dataset gets an independent **Data Encryption Key** (DEK) derived from the Privacy Plane's hardware-bound root key using the dataset identifier as input:
 
 `DEK = DStack.getKey(dataset_id, "dataset-encryption")`
 
 Encryption uses AES-256-GCM. The per-dataset granularity means revoking or delisting one dataset does not affect any other. A consumer who rents three datasets receives three separate DEKs, each scoped to a single dataset.
 
-Data encryption is handled as internal business logic within `cced` — the daemon receives plaintext from the provider, encrypts it using a DEK from its Key Manager module, and stores ciphertext to object storage. The provider never holds the DEK.
+Data encryption is handled as internal business logic within the Privacy Plane — it receives plaintext from the provider, encrypts it using a per-dataset DEK, and stores ciphertext to object storage. The provider never holds the DEK.
 
 ## Two-layer FUSE stack
 
@@ -43,8 +43,8 @@ The default chunk size is 4 MB. Chunking serves four purposes: streaming uploads
 
 ## Why not JuiceFS native encryption
 
-JuiceFS supports client-side encryption, but it only accepts one key per mount. cce4long needs per-dataset keys so that access can be granted and revoked independently. Using a separate Decrypt FUSE layer also keeps key management inside `cced`'s domain rather than delegating it to JuiceFS internals.
+JuiceFS supports client-side encryption, but it only accepts one key per mount. cce4long needs per-dataset keys so that access can be granted and revoked independently. Using a separate Decrypt FUSE layer also keeps key management inside the Privacy Plane's domain rather than delegating it to JuiceFS internals.
 
 ## Key lifecycle
 
-DEKs are derived deterministically from the root key. There is no separate key rotation — rotating means re-encrypting the dataset with a new derived key. Delisting a dataset on-chain causes `cced` to stop issuing that dataset's DEK. Existing ciphertext in S3 becomes inert.
+DEKs are derived deterministically from the root key. There is no separate key rotation — rotating means re-encrypting the dataset with a new derived key. Delisting a dataset on-chain causes the Privacy Plane to stop issuing that dataset's DEK. Existing ciphertext in S3 becomes inert.
